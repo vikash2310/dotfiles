@@ -1,0 +1,88 @@
+{
+	"name": "learn-vim",
+	"icon": "media/icon.png",
+	"displayName": "Learn Vim",
+	"description": "Learn Vim right within your favorite editor",
+	"version": "0.0.27",
+	"publisher": "vintharas",
+	"keywords": [
+		"vim",
+		"vi",
+		"vscodevim"
+	],
+	"engines": {
+		"vscode": "^1.48.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:learn-vim.learnVim",
+		"onView:learn-vim"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "learn-vim.learnVim",
+				"title": "Learn Vim"
+			},
+			{
+				"command": "learn-vim.openChapter",
+				"title": "Open Chapter"
+			}
+		],
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "learn-vim.openChapter",
+					"when": "false"
+				}
+			]
+		},
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "learn-vim-container",
+					"title": "Learn Vim",
+					"icon": "media/code.svg"
+				}
+			]
+		},
+		"views": {
+			"learn-vim-container": [
+				{
+					"id": "learn-vim",
+					"name": "Learn Vim"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint src --ext ts",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.48.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.0",
+		"@types/node": "^14.0.27",
+		"eslint": "^7.6.0",
+		"@typescript-eslint/eslint-plugin": "^3.8.0",
+		"@typescript-eslint/parser": "^3.8.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.0.1",
+		"typescript": "^3.8.3",
+		"vscode-test": "^1.4.0"
+	},
+	"__metadata": {
+		"id": "159d930e-fdd0-42de-bbf8-5f62686e83a7",
+		"publisherId": "b4de0dac-3370-427d-bfc7-59da015f6b95",
+		"publisherDisplayName": "vintharas",
+		"installedTimestamp": 1636313910013
+	}
+}
